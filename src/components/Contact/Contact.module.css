@@ -1,0 +1,16 @@
+.contactItem {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    align-items: center;
+    margin: 5px;
+    gap: 5px;
+}
+
+.contactData {
+    align-items: center;
+}
+p {
+    margin: 0;
+}
