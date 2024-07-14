@@ -36,15 +36,22 @@ const App = () => {
       ]
       )
 
-      const [searchValue, setSearchValue] = useState ('')
+      const [searchValue, setSearchValue] = useState ("")
+
+      const handleChange = (evt) => {
+        setSearchValue(evt.target.value);
+      }
+      
+      const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(searchValue.toLowerCase()))
 
 
 
       return (
         <div>
           <h1>Phonebook</h1>
-          <ContactList contacts = {contacts}/>
-          <SearchBox />
+          <SearchBox value={searchValue} onChange={handleChange}/>
+          <ContactList contacts = {filteredContacts}/>
+          
         </div>
       )
 
