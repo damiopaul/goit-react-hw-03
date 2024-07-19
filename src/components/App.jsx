@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// import ContactForm from "./ContactForm/ContactForm.jsx"
+import ContactForm from "./ContactForm/ContactForm.jsx"
 import ContactList from "./ContactList/ContactList.jsx"
 import SearchBox from './SearchBox/SearchBox.jsx';
 
@@ -45,12 +45,21 @@ const App = () => {
       const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(searchValue.toLowerCase()))
 
 
+      const deleteContact = (contactId) => {
+        setContacts (prevContacts => prevContacts.filter(contact => contact.id !== contactId))
+      }
+
+      const addContact = (newContact) => {
+        setContacts (prevContacts => [...prevContacts, newContact]);
+      }
+
 
       return (
         <div>
           <h1>Phonebook</h1>
+          <ContactForm addContact={addContact} />
           <SearchBox value={searchValue} onChange={handleChange}/>
-          <ContactList contacts = {filteredContacts}/>
+          <ContactList contacts = {filteredContacts} onDelete={deleteContact}/>
           
         </div>
       )

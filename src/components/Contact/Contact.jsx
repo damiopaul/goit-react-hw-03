@@ -2,7 +2,7 @@ import { Formik, Form } from 'formik';
 import css from "./Contact.module.css"
 
 
-export default function Contact ({id, name, number}) {
+export default function Contact ({id, name, number, onDelete}) {
 
     return (
        <li className={css.contactItem}>
@@ -10,12 +10,9 @@ export default function Contact ({id, name, number}) {
        <p>{name}</p>  
        <p>{number}</p>
        </div>
+       <button onClick ={()=> onDelete(id)}>Delete</button>
 
-       <Formik initialValues={{}} onSubmit={() => {}}>
-            <Form>
-                <button type="submit">Delete</button>
-            </Form>
-        </Formik>
+       
        </li>
 
     )
