@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import { nanoid } from "nanoid";
+import css from "./ContactForm.module.css"
 
 const ContactForm = ({ addContact }) => {
     const initialValues = {
@@ -37,7 +38,7 @@ const ContactForm = ({ addContact }) => {
             onSubmit={onSubmit}
         > 
         {formik =>(
-            <Form>
+            <Form className={css.container}>
                 <div>
                     <label htmlFor="name">Name</label>
                     <Field type="text" id="name" name="name"/>

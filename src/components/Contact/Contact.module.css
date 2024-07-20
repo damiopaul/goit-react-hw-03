@@ -6,10 +6,17 @@
     align-items: center;
     margin: 5px;
     gap: 5px;
+    width: 200px;
+    padding: 5px;
 }
 
 .contactData {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    flex-direction: column;
 }
 p {
     margin: 0;
